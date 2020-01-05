@@ -38,8 +38,18 @@
       .text-danger{
         color: crimson;
       }
-    
     }
+    footer{
+      text-align: center;
+      text-decoration: none;
+      color: #fff;
+      height: 56px;
+      line-height: 56px;
+      width: 100%;
+      margin-top: auto;
+      background-color: orange;
+    }
+
     .contents{
       padding-top:46px;
       height: 100%;
@@ -170,21 +180,76 @@
           margin-bottom: 100px;
         }
       }
-      .show-contents{
-        .postTitle{
-          text-align: center;
+      }
+    .user-show-contents{
+      &__post-title{
+        text-align: center;
+      }
+    }
+
+    .meal-info-btn{
+      margin: 0px 0px 20px 40px;
+      a{
+        text-decoration: none;
+      }
+    }
+    .meal-info{ 
+      &__box{
+        display: flex;
+        justify-content: center;
+        &__small-box{
+          &__name{
+            font-size: 20px;
+            font-weight: bold;
+            padding-top: 4px;
+            margin-bottom: 10px;
+            padding-right: 100px;
+          }
+        }
+        &__materials{
+          padding-right: 100px;
+          &__name{
+            font-size: 20px;
+            line-height: 0px;
+            font-weight: bold;
+            margin-bottom: 10px;
+          }
+        }
+        &__nt{
+          &__title{
+            font-size: 20px;
+            line-height: 0px;
+            font-weight: bold;
+            margin-bottom: 10px;
+          }
+        }
+      }
+      &__cooking{
+        margin-top: 40px;
+        display: flex;
+        justify-content: center;
+        &__title{
+          font-size: 20px;
+          line-height: 0px;
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+        &__main-box{
+          &__box1{
+            display: flex;
+            div{
+              width: 280px;
+            }
+          }
+          &__box2{
+            display: flex;
+            div{
+              width: 280px;
+            }
+          }
         }
       }
       }
+    }
   }
-  footer{
-    text-align: center;
-    text-decoration: none;
-    color: #fff;
-    height: 56px;
-    line-height: 56px;
-    width: 100%;
-    margin-top: auto;
-    background-color: orange;
-  }
-}
+

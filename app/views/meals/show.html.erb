@@ -1,80 +1,91 @@
-<div ></div>
-<% if user_signed_in? && current_user.id == @meal.user_id %>
-<%= link_to '>編集',  edit_meal_path(@meal.id)%>
-<%= link_to '>削除',meal_path(@meal.id), method: :delete, data:{ confirm: 'Are you sure?'} %>
-<% end %>
+<div class="meal-info-btn">
+  <% if user_signed_in? && current_user.id == @meal.user_id %>
+  <%= link_to '>編集',  edit_meal_path(@meal.id)%>
+  <%= link_to '>削除',meal_path(@meal.id), method: :delete, data:{ confirm: 'Are you sure?'} %>
+  <% end %>
+</div>
 
-<div class="mealName">
-  <%= @meal.name %>
+<div class="meal-info">
+  <div class="meal-info__box">
+    <div class="meal-info__box__small-box">
+      <div class="meal-info__box__small-box__name">
+        <%= @meal.name %>
+      </div>
+      <% if @meal.image? %>
+      <div class="meal-info__box__small-box__image">
+        <%= image_tag @meal.image.to_s, size:'280x210' %>
+      </div>
+      <% end %>
+    </div>
+    <div class="meal-info__box__materials">
+      <p class="meal-info__box__materials__name">材料</p>
+      <%= simple_format @meal.materials %>
+    </div>
+    
+    <div class="meal-info__box__nt">
+      <p class="meal-info__box__nt__title">栄養素</p>
+      <% if @meal.protein? %>
+      <div class="meal-info__box__nt__protein">
+        <p>たんぱく質： <%= @meal.protein %> g</p>
+      </div>
+      <% end %>
+      <% if @meal.fat? %>
+      <div class="meal-info__box__nt__fat">
+        <p>脂質： <%= @meal.fat %> g</p>
+      </div>
+      <% end %>
+      <% if @meal.carbo? %>
+      <div class="meal-info__box__nt__carbo">
+        <p>炭水化物： <%= @meal.carbo %> g</p>
+      </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="meal-info__cooking">
+    <div class="meal-info__cooking__main-box">
+    <p class="meal-info__cooking__title">作り方</p>
+    <div class="meal-info__cooking__main-box__box1">
+      <div class="method1">
+        <p class="method1">1</p>
+        <% if @meal.step1_image? %>
+        <%= image_tag @meal.step1_image.url, size:'280x210' %>
+        <% end %>
+        <%= simple_format @meal.step1 %>
+      </div>
+
+      <div>
+        <p class="method2">2</p>
+        <% if @meal.step2_image? %>
+        <%= image_tag @meal.step2_image.url, size:'280x210' %>
+        <% end %>
+        <%= simple_format @meal.step2 %>
+      </div>
+
+      <div>
+        <p class="method3">3</p>
+        <% if @meal.step3_image? %>
+        <%= image_tag @meal.step3_image.url, size:'280x210' %>
+        <% end %>
+        <%= simple_format @meal.step3 %>
+      </div>
+    </div>
+    <div class="meal-info__cooking__main-box__box2">
+      <div>
+        <p class="method4">4</p>
+        <% if @meal.step4_image? %>
+        <%= image_tag @meal.step4_image.url, size:'280x210' %>
+        <% end %>
+        <%= simple_format @meal.step4 %>
+      </div>
+
+      <div>
+        <p class="method5">5</p>
+        <% if @meal.step5_image? %>
+        <%= image_tag @meal.step5_image.url, size:'280x210' %>
+        <% end %>
+        <%= simple_format @meal.step5 %>
+      </div>
+    </div>
+    </div>
 </div>
-<% if @meal.image? %>
-<div class="mealImage">
-  <%= image_tag @meal.image.to_s, size:'280x210' %>
-</div>
-<% end %>
-<div class="mealMaterials">
-  <%= simple_format @meal.materials %>
-</div>
-<div class="mealStep1">
-  <%= simple_format @meal.step1 %>
-</div>
-<% if @meal.step1_image? %>
-<div class="mealStep1_image">
-  <%= image_tag @meal.step1_image.url, size:'280x210' %>
-</div>
-<% end %>
-<% if @meal.step2? %>
-<div class="mealStep2">
-  <%= simple_format @meal.step2 %>
-</div>
-<% end %>
-<% if @meal.step2_image? %>
-<div class="mealStep2_image">
-  <%= image_tag @meal.step2_image.to_s, size:'280x210' %>
-</div>
-<% end %>
-<% if @meal.step3? %>
-<div class="mealStep3">
-  <%= simple_format @meal.step3 %>
-</div>
-<% end %>
-<% if @meal.step3_image? %>
-<div class="mealStep3_image">
-  <%= image_tag @meal.step3_image.to_s, size:'280x210' %>
-</div>
-<% end %>
-<% if @meal.step4? %>
-<div class="mealStep4">
-  <%= simple_format @meal.step4 %>
-</div>
-<% end %>
-<% if @meal.step4_image? %>
-<div class="mealStep4_image">
-  <%= image_tag @meal.step4_image.to_s, size:'280x210' %>
-</div>
-<% end %>
-<% if @meal.step5? %>
-<div class="mealStep5">
-  <%= simple_format @meal.step5 %>
-</div>
-<% end %>
-<% if @meal.step5_image? %>
-<div class="mealStep5_image">
-  <%= image_tag @meal.step5_image.to_s, size:'280x210' %>
-</div>
-<% end %>
-<% if @meal.protein? %>
-<div class="mealProtein">
-  <%= @meal.protein %>
-</div>
-<% end %>
-<% if @meal.fat? %>
-<div class="mealFat">
-  <%= @meal.fat %>
-</div>
-<% end %>
-<% if @meal.carbo? %>
-<div class="mealCarbo">
-  <%= @meal.carbo %>
-</div>
-<% end %>
