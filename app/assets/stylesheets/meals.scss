@@ -1,123 +1,190 @@
-header{
-    height: 56px;
-    width: 100%;
-    padding: 0 150px;
-    background-color: orange;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    a {
-      font-size: large;
-      font-weight: 500;
-      text-decoration: none;
-      color: #fff;
-    }
-  
-    .header__right {
+#wrapper{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  header{
+      height: 56px;
+      width: 100%;
+      padding: 0 150px;
+      background-color: orange;
       display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
       a {
-        margin-right: 15px;
+        font-size: large;
+        font-weight: 500;
         text-decoration: none;
+        color: #fff;
+      }
+    
+      .header__right {
+        display: flex;
+        a {
+          margin-right: 15px;
+          text-decoration: none;
+        }
       }
     }
-  }
-  
-  .notifications{
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    .text-success{
-      color: chartreuse;
+    
+    .notifications{
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding-top:56px;
+      .text-success{
+        color: chartreuse;
+      }
+      .text-danger{
+        color: crimson;
+      }
+    
     }
-    .text-danger{
-      color: crimson;
-    }
-  
-  }
-  .contents{
-    display: flex;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-    &__table-box{
-      padding-top: 20px;
-      table{
-        display: table;
-        border-collapse: collapse;
-        table-layout: fixed;
-        margin: 20px auto;
-        thead{
-          background-color: palegoldenrod;
-          border: 1px grey solid;
-          th{
-            padding: 20px;
-          }
-        }
-        tbody{
+    .contents{
+      padding-top:46px;
+      height: 100%;
+      width: 100%;
+      &__table-box{
+        display: flex;
+        flex-direction: column;
+        table{
+          display: table;
           border-collapse: collapse;
-          background-color: peachpuff;
-          tr{
+          table-layout: fixed;
+          margin: 20px auto;
+          thead{
+            background-color: palegoldenrod;
             border: 1px grey solid;
-            td{
+            th{
               padding: 20px;
-              a{
-                text-decoration: none;
-                color:black;
+            }
+          }
+          tbody{
+            border-collapse: collapse;
+            background-color: peachpuff;
+            tr{
+              border: 1px grey solid;
+              td{
+                padding: 20px;
+                a{
+                  text-decoration: none;
+                  color:black;
+                }
+                a:hover {
+                  background-color: lightgrey;
+                }
               }
-              a:hover {
-                background-color: lightgrey;
               }
             }
+          }
+          &__post-btn{
+            margin: 0 auto;
+            a{
+              text-decoration: none;
             }
           }
         }
-        &__post-btn{
-          a{
-            text-decoration: none;
-          }
+      .post-meal{
+        &__title {
+          text-align: center;
+          padding: 0px 20px;
+          font-size: 20px;
+          font-weight: bold;
         }
-      }
-    .new-meal{
-      &__title{
-        text-align: center;
-        padding: 20px;
-        font-weight: bold;
-      }
-      form{
-        .form__contents{
+        form{
           display: flex;
-          .form__contents__1{
-            display: flex;
-            flex-direction: column;
-            label{
-              .hidden{
-                display: none;
-              }
-            }
+          flex-direction: column;
+          align-items: center;
+          .meal-infomation{
+            margin: 0 auto;
+            padding: 50px 0px 20px;
           }
+          .form__contents{
+            margin: 0 auto;
+            display: flex;
+            .form__contents__1{
+              display: flex;
+              flex-direction: column;
+              padding-right:40px;
+              .form__name{
+                margin-bottom: 10px;
+              }
+              label{
+                margin-bottom: 10px;
+                .hidden{
+                  display: none;
+                }
+              }
+              .form__materials{
+                height: 117px;
+                width: 219px;
+                }
+            }
           .form__contents__2{
             display: flex;
             flex-direction: column;
             .form__contents__2__protein-box{
               display: flex;
+              margin-bottom: 10px;
             }
             .form__contents__2__fat__box{
               display: flex;
+              margin-bottom: 10px;
             }
             .form__contents__2__carbo__box{
               display: flex;
+              margin-bottom: 10px;
             }
           }
-        }
-          .form__step{
-            display: flex;
-            flex-direction: column;
-            label{
-              .hidden{
-                display: none;
+          }
+            .cooking-method{
+              margin: 0 auto;
+              padding: 50px 0px 30px 0px;
+            }
+            .form__step{
+              display: flex;
+            &__1-2-3{
+              display: flex;
+              flex-direction: column;
+              padding-right: 40px;
+              
+              label{
+                margin-bottom: 20px;
+                .hidden{
+                  display: none;
+                }
               }
             }
-          }
+              &__4-5{
+                display: flex;
+                flex-direction: column;
+                label{
+                  margin-bottom: 20px;
+                  .hidden{
+                    display: none;
+                  }
+                }
+            }
+            }
+        .form__btn{
+          margin-bottom: 100px;
+        }
       }
-    }
+      .show-contents{
+        .postTitle{
+          text-align: center;
+        }
+      }
+      }
   }
+  footer{
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    height: 56px;
+    line-height: 56px;
+    width: 100%;
+    margin-top: auto;
+    background-color: orange;
+  }
+}
