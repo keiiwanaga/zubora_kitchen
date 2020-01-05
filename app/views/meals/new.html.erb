@@ -1,14 +1,14 @@
-<div class="new-meal">
-  <div class="new-meal__title">
+<div class="post-meal">
+  <div class="post-meal__title">
     レシピを書く
   </div>
 
   <%= form_with model: @meal, class: :form, local: true do |form| %>
-    <p>レシピの情報を入力</p>
+    <p class="meal-infomation">料理の情報を入力</p>
     <div class="form__contents">
       <div class="form__contents__1">
         <%= form.text_field :name, placeholder: :料理名, class: :form__name %>
-        <label class="form__contents__1__image">写真をのせる
+        <label class="form__contents__1__image">料理写真
           <i class="fas fa-image"></i>
           <%= form.file_field :image, class: :hidden %>
         </label>
@@ -31,33 +31,37 @@
       </div>
     </div>
 
+    <p class="cooking-method">調理方法を入力</p>
     <div class="form__step">
-      <p>調理方法を入力</p>
-      <%= form.text_area :step1, placeholder: :手順1, class: :form__step__1 %>
-      <label class="form__step__image1">写真をのせる
-        <i class="fas fa-image"></i>
-        <%= form.file_field :step1_image, class: :hidden%>
-      </label>
-      <%= form.text_area :step2, placeholder: :手順2, class: :form__step__2 %>
-      <label class="form__step__image2">写真をのせる
-        <i class="fas fa-image"></i>
-        <%= form.file_field :step2_image, class: :hidden%>
-      </label>
-      <%= form.text_area :step3, placeholder: :手順3, class: :form__step__3 %>
-      <label class="form__step__image3">写真をのせる
-        <i class="fas fa-image"></i>
-        <%= form.file_field :step3_image, class: :hidden%>
-      </label>
-      <%= form.text_area :step4, placeholder: :手順4, class: :form__step__4 %>
-      <label class="form__step__image4">写真をのせる
-        <i class="fas fa-image"></i>
-        <%= form.file_field :step4_image, class: :hidden%>
-      </label>
-      <%= form.text_area :step5, placeholder: :手順5, class: :form__step__5 %>
-      <label class="form__step__image5">写真をのせる
-        <i class="fas fa-image"></i>
-        <%= form.file_field :step5_image, class: :hidden%>
-      </label>
+      <div class="form__step__1-2-3">
+        <%= form.text_area :step1, placeholder: :手順1, class: :form__step__1 %>
+        <label class="form__step__image1">写真をのせる
+          <i class="fas fa-image"></i>
+          <%= form.file_field :step1_image, class: :hidden%>
+        </label>
+        <%= form.text_area :step2, placeholder: :手順2, class: :form__step__2 %>
+        <label class="form__step__image2">写真をのせる
+          <i class="fas fa-image"></i>
+          <%= form.file_field :step2_image, class: :hidden%>
+        </label>
+        <%= form.text_area :step3, placeholder: :手順3, class: :form__step__3 %>
+        <label class="form__step__image3">写真をのせる
+          <i class="fas fa-image"></i>
+          <%= form.file_field :step3_image, class: :hidden%>
+        </label>
+      </div>
+      <div class="form__step__4-5">
+        <%= form.text_area :step4, placeholder: :手順4, class: :form__step__4 %>
+        <label class="form__step__image4">写真をのせる
+          <i class="fas fa-image"></i>
+          <%= form.file_field :step4_image, class: :hidden%>
+        </label>
+        <%= form.text_area :step5, placeholder: :手順5, class: :form__step__5 %>
+        <label class="form__step__image5">写真をのせる
+          <i class="fas fa-image"></i>
+          <%= form.file_field :step5_image, class: :hidden%>
+        </label>
+      </div>
     </div>
     <%= form.submit '投稿する', class: :form__btn %>
   <% end %>
