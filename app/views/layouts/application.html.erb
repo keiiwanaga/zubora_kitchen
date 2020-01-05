@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ZuboraKitchen</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <header>
+      <%= link_to "健康ズボラ食堂", root_path, class: "header__title--text" %>
+      <div class="header__right">
+         <% if user_signed_in? %>
+         <%= link_to current_user.nickname, user_path(current_user), class: "header__right--btn" %>
+          <%= link_to ">ログアウト", destroy_user_session_path, method: :delete, class: "header__right__btn" %>
+        <% else %>
+          <%= link_to ">ログイン", new_user_session_path, class: "header__right__btn" %>
+          <%= link_to ">新規登録", new_user_registration_path, class: "header__right__btn" %>
+        <% end %>
+      </div>
+    </header>
+    <div class="notifications">
+      <% if flash[:notice] %>
+      <p class="text-success"><%= flash[:notice] %></p>
+      <% end %>
+      <% if flash[:alert] %>
+      <p class="text-danger"><%= flash[:alert] %></p>
+      <% end %>
+        </div>
+    <div class="contents">
+      <%= yield %>
+    </div>
+  </body>
+</html>

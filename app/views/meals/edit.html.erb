@@ -1,0 +1,15 @@
+<div class="content__title">
+  レシピの編集
+</div>
+
+<%= form_with model: @meal, class: :form, local: true do |form| %>
+  <%= form.text_field :name, placeholder: :料理名, class: :form__name %>
+  <%= form.label :image, '料理写真' %>
+  <%= form.file_field :image %>
+  <%= form.text_area :materials, placeholder: :材料名, class: :form__materials %>
+  <%= form.text_area :methods, placeholder: :調理方法, class: :form__methods %>
+  <%= form.number_field :protein, placeholder: :たんぱく質, class: :form__protein %>
+  <%= form.number_field :fat, placeholder: :脂質, class: :form__fat %>
+  <%= form.number_field :carbo, placeholder: :炭水化物, class: :form__carbo%>
+  <%= form.submit '投稿する', class: :form__btn %>
+<% end %>

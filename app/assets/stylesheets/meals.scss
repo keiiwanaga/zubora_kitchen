@@ -1,0 +1,123 @@
+header{
+    height: 56px;
+    width: 100%;
+    padding: 0 150px;
+    background-color: orange;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    a {
+      font-size: large;
+      font-weight: 500;
+      text-decoration: none;
+      color: #fff;
+    }
+  
+    .header__right {
+      display: flex;
+      a {
+        margin-right: 15px;
+        text-decoration: none;
+      }
+    }
+  }
+  
+  .notifications{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    .text-success{
+      color: chartreuse;
+    }
+    .text-danger{
+      color: crimson;
+    }
+  
+  }
+  .contents{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    &__table-box{
+      padding-top: 20px;
+      table{
+        display: table;
+        border-collapse: collapse;
+        table-layout: fixed;
+        margin: 20px auto;
+        thead{
+          background-color: palegoldenrod;
+          border: 1px grey solid;
+          th{
+            padding: 20px;
+          }
+        }
+        tbody{
+          border-collapse: collapse;
+          background-color: peachpuff;
+          tr{
+            border: 1px grey solid;
+            td{
+              padding: 20px;
+              a{
+                text-decoration: none;
+                color:black;
+              }
+              a:hover {
+                background-color: lightgrey;
+              }
+            }
+            }
+          }
+        }
+        &__post-btn{
+          a{
+            text-decoration: none;
+          }
+        }
+      }
+    .new-meal{
+      &__title{
+        text-align: center;
+        padding: 20px;
+        font-weight: bold;
+      }
+      form{
+        .form__contents{
+          display: flex;
+          .form__contents__1{
+            display: flex;
+            flex-direction: column;
+            label{
+              .hidden{
+                display: none;
+              }
+            }
+          }
+          .form__contents__2{
+            display: flex;
+            flex-direction: column;
+            .form__contents__2__protein-box{
+              display: flex;
+            }
+            .form__contents__2__fat__box{
+              display: flex;
+            }
+            .form__contents__2__carbo__box{
+              display: flex;
+            }
+          }
+        }
+          .form__step{
+            display: flex;
+            flex-direction: column;
+            label{
+              .hidden{
+                display: none;
+              }
+            }
+          }
+      }
+    }
+  }

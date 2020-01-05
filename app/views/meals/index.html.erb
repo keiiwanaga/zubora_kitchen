@@ -1,0 +1,29 @@
+<div class="contents__table-box">
+  <% if user_signed_in? %>
+    <div class="contents__table-box__post-btn">
+      <%= link_to ">新規投稿", new_meal_path%>
+  <% end %>
+  <table class="contents__table-box__meals">
+    <thead class="contents__table-box__meals__header">
+      <tr>
+          <th>料理名</th>
+          <th>タンパク質</th>
+          <th>脂質</th>
+          <th>炭水化物</th>
+          <th>投稿者</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @meals.each do |meal| %>
+      <tr>
+          <td align="center"><%= link_to meal.name, meal_path(meal.id)%></td>
+          <td align="center"><%= meal.protein %>g</td>
+          <td align="center"><%= meal.fat %>g</td>
+          <td align="center"><%= meal.carbo %>g</td>
+          <td align="center"><%= link_to meal.user.nickname, user_path(meal.user), class: "content__right__bottom--userName--btn" %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  </div>
+</div>
