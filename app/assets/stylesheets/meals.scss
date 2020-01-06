@@ -26,230 +26,250 @@
         }
       }
     }
-    
-    .notifications{
-      display: flex;
-      justify-content: center;
-      margin: 0;
-      padding-top:56px;
-      .text-success{
-        color: chartreuse;
-      }
-      .text-danger{
-        color: crimson;
-      }
+  .notifications{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding-top:56px;
+    .text-success{
+      color: chartreuse;
     }
-    footer{
-      text-align: center;
-      text-decoration: none;
-      color: #fff;
-      height: 56px;
-      line-height: 56px;
-      width: 100%;
-      margin-top: auto;
-      background-color: orange;
+    .text-danger{
+      color: crimson;
     }
+  }
 
-    .contents{
-      padding-top:46px;
-      height: 100%;
-      width: 100%;
-      &__table-box{
+  .contents{
+    padding-top:56px;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    &__table-box{
+      display: flex;
+      flex-direction: column;
+      table{
+        display: table;
+        border-collapse: collapse;
+        table-layout: fixed;
+        margin: 20px auto;
+        thead{
+          background-color: palegoldenrod;
+          border: 1px grey solid;
+          th{
+            padding: 20px;
+          }
+        }
+        tbody{
+          border-collapse: collapse;
+          background-color: peachpuff;
+          tr{
+            border: 1px grey solid;
+            td{
+              padding: 20px;
+              a{
+                text-decoration: none;
+                color:black;
+              }
+              a:hover {
+                background-color: lightgrey;
+              }
+            }
+            }
+          }
+        }
+        &__post-btn{
+          margin: 0 auto;
+          a{
+            text-decoration: none;
+          }
+        }
+      }
+    .post-meal{
+      &__title {
+        text-align: center;
+        padding: 0px 20px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+      form{
         display: flex;
         flex-direction: column;
-        table{
-          display: table;
-          border-collapse: collapse;
-          table-layout: fixed;
-          margin: 20px auto;
-          thead{
-            background-color: palegoldenrod;
-            border: 1px grey solid;
-            th{
-              padding: 20px;
-            }
-          }
-          tbody{
-            border-collapse: collapse;
-            background-color: peachpuff;
-            tr{
-              border: 1px grey solid;
-              td{
-                padding: 20px;
-                a{
-                  text-decoration: none;
-                  color:black;
-                }
-                a:hover {
-                  background-color: lightgrey;
-                }
-              }
-              }
-            }
-          }
-          &__post-btn{
-            margin: 0 auto;
-            a{
-              text-decoration: none;
-            }
-          }
+        align-items: center;
+        .meal-infomation{
+          margin: 0 auto;
+          padding: 50px 0px 20px;
         }
-      .post-meal{
-        &__title {
-          text-align: center;
-          padding: 0px 20px;
-          font-size: 20px;
-          font-weight: bold;
-        }
-        form{
+        .form__contents{
+          margin: 0 auto;
           display: flex;
-          flex-direction: column;
-          align-items: center;
-          .meal-infomation{
-            margin: 0 auto;
-            padding: 50px 0px 20px;
-          }
-          .form__contents{
-            margin: 0 auto;
-            display: flex;
-            .form__contents__1{
-              display: flex;
-              flex-direction: column;
-              padding-right:40px;
-              .form__name{
-                margin-bottom: 10px;
-              }
-              label{
-                margin-bottom: 10px;
-                .hidden{
-                  display: none;
-                }
-              }
-              .form__materials{
-                height: 117px;
-                width: 219px;
-                }
-            }
-          .form__contents__2{
+          .form__contents__1{
             display: flex;
             flex-direction: column;
-            .form__contents__2__protein-box{
-              display: flex;
+            padding-right:40px;
+            .form__name{
               margin-bottom: 10px;
             }
-            .form__contents__2__fat__box{
-              display: flex;
+            label{
               margin-bottom: 10px;
+              .hidden{
+                display: none;
+              }
             }
-            .form__contents__2__carbo__box{
-              display: flex;
-              margin-bottom: 10px;
+            .form__materials{
+              height: 117px;
+              width: 219px;
+              }
+          }
+        .form__contents__2{
+          display: flex;
+          flex-direction: column;
+          .form__contents__2__protein-box{
+            display: flex;
+            margin-bottom: 10px;
+          }
+          .form__contents__2__fat__box{
+            display: flex;
+            margin-bottom: 10px;
+          }
+          .form__contents__2__carbo__box{
+            display: flex;
+            margin-bottom: 10px;
+          }
+        }
+        }
+          .cooking-method{
+            margin: 0 auto;
+            padding: 50px 0px 30px 0px;
+          }
+          .form__step{
+            display: flex;
+          &__1-2-3{
+            display: flex;
+            flex-direction: column;
+            padding-right: 40px;
+            
+            label{
+              margin-bottom: 20px;
+              .hidden{
+                display: none;
+              }
             }
           }
-          }
-            .cooking-method{
-              margin: 0 auto;
-              padding: 50px 0px 30px 0px;
-            }
-            .form__step{
-              display: flex;
-            &__1-2-3{
+            &__4-5{
               display: flex;
               flex-direction: column;
-              padding-right: 40px;
-              
               label{
                 margin-bottom: 20px;
                 .hidden{
                   display: none;
                 }
               }
-            }
-              &__4-5{
-                display: flex;
-                flex-direction: column;
-                label{
-                  margin-bottom: 20px;
-                  .hidden{
-                    display: none;
-                  }
-                }
-            }
-            }
-        .form__btn{
-          margin-bottom: 100px;
-        }
-      }
-      }
-    .user-show-contents{
-      &__post-title{
-        text-align: center;
+          }
+          }
+      .form__btn{
+        margin-bottom: 100px;
       }
     }
+    }
+  .user-show-contents{
+    &__post-title{
+      text-align: center;
+    }
+  }
 
-    .meal-info-btn{
-      margin: 0px 0px 20px 40px;
-      a{
-        text-decoration: none;
-      }
+  .meal-info-btn{
+    margin: 0px 0px 20px 40px;
+    a{
+      text-decoration: none;
     }
-    .meal-info{ 
-      &__box{
-        display: flex;
-        justify-content: center;
-        &__small-box{
-          &__name{
-            font-size: 20px;
-            font-weight: bold;
-            padding-top: 4px;
-            margin-bottom: 10px;
-            padding-right: 100px;
-          }
-        }
-        &__materials{
+  }
+  .meal-info{ 
+    &__box{
+      display: flex;
+      justify-content: center;
+      &__small-box{
+        &__name{
+          font-size: 20px;
+          font-weight: bold;
+          padding-top: 4px;
+          margin-bottom: 10px;
           padding-right: 100px;
-          &__name{
-            font-size: 20px;
-            line-height: 0px;
-            font-weight: bold;
-            margin-bottom: 10px;
-          }
-        }
-        &__nt{
-          &__title{
-            font-size: 20px;
-            line-height: 0px;
-            font-weight: bold;
-            margin-bottom: 10px;
-          }
         }
       }
-      &__cooking{
-        margin-top: 40px;
-        display: flex;
-        justify-content: center;
+      &__materials{
+        padding-right: 100px;
+        &__name{
+          font-size: 20px;
+          line-height: 0px;
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+      }
+      &__nt{
         &__title{
           font-size: 20px;
           line-height: 0px;
           font-weight: bold;
           margin-bottom: 10px;
         }
-        &__main-box{
-          &__box1{
-            display: flex;
-            div{
-              width: 280px;
-            }
+      }
+    }
+    &__cooking{
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      &__title{
+        font-size: 20px;
+        line-height: 0px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      &__main-box{
+        margin-bottom: 100px;
+        &__box1{
+          display: flex;
+          &__method1{
+            width: 280px;
           }
-          &__box2{
-            display: flex;
-            div{
-              width: 280px;
-            }
+          &__method2{
+            width: 280px;
+            margin: 0 50px;
+          }
+          &__method3{
+            width: 280px;
+          }
+          
+        }
+        &__box2{
+          display: flex;
+          &__method4{
+            width: 280px;
+          }
+          &__method5{
+            width: 280px;
+            margin: 0 50px;
           }
         }
       }
-      }
+    }
     }
   }
+}
+footer{
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  height: 56px;
+  line-height: 56px;
+  width: 100%;
+  margin-top: auto;
+  background-color: orange;
+}
 
+.login{
+  text-align: center;
+}
+
+.regist{
+  text-align: center;
+}
