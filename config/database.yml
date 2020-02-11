@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: zubora_kitchen_production
-  username: zubora_kitchen
-  password: <%= ENV['ZUBORA_KITCHEN_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
