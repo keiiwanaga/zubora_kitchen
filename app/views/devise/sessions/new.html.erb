@@ -11,6 +11,11 @@
       <%= f.label :password, 'パスワード'%><br />
       <%= f.password_field :password, autocomplete: "off" %>
     </div>
+    
+    
+    <p><strong>テストアカウント</strong><br />
+    メールアドレス:&nbsp;test@test.com<br />
+    パスワード:&nbsp;test1234</p>
 
     <% if devise_mapping.rememberable? %>
       <div class="field">
