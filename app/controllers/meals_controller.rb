@@ -1,6 +1,6 @@
 class MealsController < ApplicationController
   def index
-    @meals = Meal.includes(:user).order(created_at: :desc)
+    @meals = Meal.includes(:user)
   end
 
   def new
