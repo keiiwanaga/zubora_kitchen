@@ -1,10 +1,10 @@
 class Meal < ApplicationRecord
   validates :name, :materials, :step1, presence: true
-  has_one_attached :image
-  has_one_attached :step1_image
-  has_one_attached :step2_image
-  has_one_attached :step3_image
-  has_one_attached :step4_image
-  has_one_attached :step5_image
+  mount_uploader :image, ImagesUploader
+  mount_uploader :step1_image, ImagesUploader
+  mount_uploader :step2_image, ImagesUploader
+  mount_uploader :step3_image, ImagesUploader
+  mount_uploader :step4_image, ImagesUploader
+  mount_uploader :step5_image, ImagesUploader
   belongs_to :user
 end
