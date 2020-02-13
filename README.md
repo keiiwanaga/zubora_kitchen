@@ -1,24 +1,14 @@
-# README
+# 健康ズボラ食堂
+Ruby on Railsで作成した簡単健康的な料理レシピ共有サービスです。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+# 機能、主要技術一覧
+* レシピ一覧表示機能
+* レシピ詳細表示機能
+* レシピ編集・削除機能
+* レシピ投稿機能
+* 管理ユーザー登録、ログイン機能(devise)
+* 画像ファイルのアップロード機能(S3)
+* デプロイ(Heroku)
 
-* Ruby version
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
